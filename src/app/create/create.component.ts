@@ -25,8 +25,8 @@ export class CreateComponent implements OnInit {
   		.subscribe(res => this.articles = res);
   		
   	this.articleForm = this.fb.group({
-  		'title': [null, Validators.compose([Validators.required, Valiator.minLength(10), Valiator.maxLength(45)])],
-  		'content': [null, Validators.compose([Validators.required, Valiator.minLength(10)])],
+  		'title': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(45)])],
+  		'content': [null, Validators.compose([Validators.required, Validators.minLength(10)])],
   	})
   }
 
@@ -34,7 +34,7 @@ export class CreateComponent implements OnInit {
   	this._articleService.insertArticle(article)
   		.subscribe(newArticle => {
   			this.articles.push(newArticle);
-  			this.route.navigateByUrl('/');
+  			this.router.navigateByUrl('/');
   		})
   }
 

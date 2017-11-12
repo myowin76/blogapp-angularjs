@@ -6,11 +6,14 @@
 				<label for="">Article Title
 					<input type="text" name="title" [formControl]="articleForm.controls['title']" formControlName="title" />
 				</label>
-				<div class="alert" *ngIf="!articleForm.controls['title'].valid && articleForm.controls['title'].touched"></div>
+				<div class="alert" *ngIf="!articleForm.controls['title'].valid && articleForm.controls['title'].touched">You must specify a title</div>
 				<label for="">Description
 					<textarea name="content" id="content" required 
 						[formControl]="articleForm.controls['content']" formControlName="content"></textarea>
 				</label>
+				<div class="alert" *ngIf="!articleForm.controls['content'].valid && articleForm.controls['content'].touched">You must specify a content</div>
+				<input type="submit" class="cta-btn filled" value="Post article" [disabled]="!articleForm.valid" />
+			
 			</div>
 		</div>
 	</form>

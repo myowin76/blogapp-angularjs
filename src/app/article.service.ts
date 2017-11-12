@@ -20,7 +20,7 @@ export class ArticleService {
   		.map(result => this.result = result.json());
   }
 
-  insertArticle(id){
+  insertArticle(post: Article){
   	let headers = new Headers({
   		'Content-Type': 'application/json'
   	});

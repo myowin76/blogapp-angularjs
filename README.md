@@ -6,3 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 
+#run the server
+root > node server
+
+#build
+ng build
