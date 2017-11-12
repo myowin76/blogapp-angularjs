@@ -1,0 +1,17 @@
+<div class="article-container">
+	<form [formGroup]="articleForm" (ngSubmit)="addArticle(articleForm.value)"
+		*ngIf="articleForm">
+		<div class="row expanded">
+			<div class="small-12 columns">
+				<label for="">Article Title
+					<input type="text" name="title" [formControl]="articleForm.controls['title']" formControlName="title" />
+				</label>
+				<div class="alert" *ngIf="!articleForm.controls['title'].valid && articleForm.controls['title'].touched"></div>
+				<label for="">Description
+					<textarea name="content" id="content" required 
+						[formControl]="articleForm.controls['content']" formControlName="content"></textarea>
+				</label>
+			</div>
+		</div>
+	</form>
+</div>
