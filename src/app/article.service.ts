@@ -43,4 +43,9 @@ export class ArticleService {
     return this._http.post('/api/update/'+id, JSON.stringify(post), options)
       .map(result => this.result = result.json());
   }
+
+  deleteArticle(id){
+    return this._http.get("/api/delete/"+id)
+      .map(result => this.result = result.json());
+  }
 }
